@@ -1,0 +1,94 @@
+--- dev/null
++++ .bazelrc
+@@ -0,0 +1,17 @@
++
++# NOTES: I found it impossible to get data paths correct when it's ran as @ouster_sdk//tests:all
++# from another package.
++# Tried:
++# - a variety of defines for the DATA_DIR below (in the other module)
++# - using bazel_tools runfiles
++# If anyone knows how it could be done, and reads this, please let me know :)
++
++# Anyhow, tests are passing if I run the module from its own workspace as //ouster_sdk//tests:all with
++# the DATA_DIR defines below.
++
++
++build --cxxopt='-std=c++17'
++
++# data path for tests (rest does not need any, or depends on pcap that I haven't bazelized)
++test //tests:bcompat_meta_json --test_env=DATA_DIR=tests/metadata/
++test //tests:metadata_test --test_env=DATA_DIR=tests/metadata/
+
+--- dev/null
++++ .bazelversion
+@@ -0,0 +1 @@
++7.4.1
+
+--- dev/null
++++ MODULE.bazel
+@@ -0,0 +1,10 @@
++
++# only building the client to reduce dependencies and anyhow not using other parts of the sdk
++module(name = "ouster_sdk", version = "0.13.1")
++
++bazel_dep(name = "eigen", version = "3.4.0")
++bazel_dep(name = "curl", version = "8.8.0.bcr.2")
++bazel_dep(name = "spdlog", version = "1.15.0.bcr.1")
++
++bazel_dep(name = "jsoncpp", version = "1.9.6")
++bazel_dep(name = "googletest", version = "1.15.2")
+
+--- dev/null
++++ ouster_client/BUILD
+@@ -0,0 +1,21 @@
++
++package(default_visibility = ["//visibility:public"])
++
++cc_library(
++    name = "ouster_client",
++    srcs = glob(["src/*"]),
++    deps = [
++        "//ouster_client/include:ouster_headers",
++        "//ouster_client/include:ouster_nonstd",
++        "@eigen",
++        "//thirdparty:jsoncons",
++        "@jsoncpp",
++        "@curl",
++        "@spdlog"
++    ],
++    includes = [
++        "include",
++        "include/optional-lite",
++        "../thirdparty",
++    ],
++)
+
+--- dev/null
++++ ouster_client/include/BUILD
+@@ -0,0 +1,12 @@
++
++cc_library(
++    name = "ouster_headers",
++    hdrs = glob(["ouster/*.h", "ouster/impl/*.h"]),
++    visibility = ["//visibility:public"]
++)
++
++cc_library(
++    name = "ouster_nonstd",
++    srcs = ["optional-lite/nonstd/optional.hpp"],
++    visibility = ["//ouster_client:__pkg__"]
++)
+
+--- dev/null
++++ thirdparty/BUILD
+@@ -0,0 +1,10 @@
++
++cc_library(
++    name = "jsoncons",
++    textual_hdrs = glob([
++        "jsoncons/**/*.hpp",
++        "jsoncons_ext/**/*.hpp"
++    ]),
++    visibility = ["//visibility:public"],
++)
++

@@ -1,0 +1,139 @@
+--- dev/null
++++ tests/BUILD
+@@ -0,0 +1,136 @@
++
++cc_test(
++    name = "bcompat_meta_json",
++    srcs = ["bcompat_meta_json_test.cpp"],
++    deps = [
++        "//ouster_client:ouster_client",
++        "@googletest//:gtest",
++        "@googletest//:gtest_main",
++    ],
++    data = [
++        ":test_metadata_files"
++    ]
++)
++
++cc_test(
++    name = "metadata_test",
++    srcs = ["metadata_test.cpp"],
++    deps = [
++        "//ouster_client:ouster_client",
++        "@googletest//:gtest",
++        "@googletest//:gtest_main",
++        "@jsoncpp",
++    ],
++    data = [
++        ":test_metadata_files"
++    ]
++)
++
++cc_test(
++    name = "lidar_scan",
++    srcs = ["lidar_scan_test.cpp"],
++    deps = [
++        "//ouster_client:ouster_client",
++        "@googletest//:gtest",
++        "@googletest//:gtest_main",
++    ],
++    # data = [
++    #     ":test_metadata_files"
++    # ]
++)
++
++cc_test(
++    name = "cartesian",
++    srcs = ["cartesian_test.cpp", "util.h"],
++    deps = [
++        "//ouster_client:ouster_client",
++        "@googletest//:gtest",
++        "@googletest//:gtest_main",
++    ],
++    # data = [
++    #     ":test_metadata_files"
++    # ]
++)
++cc_test(
++    name = "metadata_errors",
++    srcs = ["metadata_errors_test.cpp"],
++    deps = [
++        "//ouster_client:ouster_client",
++        "@googletest//:gtest",
++        "@googletest//:gtest_main",
++    ],
++    # data = [
++    #     ":test_metadata_files"
++    # ]
++)
++cc_test(
++    name = "profile_extension",
++    srcs = ["profile_extension_test.cpp"],
++    deps = [
++        "//ouster_client:ouster_client",
++        "@googletest//:gtest",
++        "@googletest//:gtest_main",
++    ],
++    # data = [
++    #     ":test_metadata_files"
++    # ]
++)
++cc_test(
++    name = "array_view",
++    srcs = ["array_view_test.cpp"],
++    deps = [
++        "//ouster_client:ouster_client",
++        "@googletest//:gtest",
++        "@googletest//:gtest_main",
++    ],
++    # data = [
++    #     ":test_metadata_files"
++    # ]
++)
++cc_test(
++    name = "field",
++    srcs = ["field_test.cpp"],
++    deps = [
++        "//ouster_client:ouster_client",
++        "@googletest//:gtest",
++        "@googletest//:gtest_main",
++    ],
++    # data = [
++    #     ":test_metadata_files"
++    # ]
++)
++
++TEST_METADATA_FILES = [
++    "metadata/1_12_os1-991913000010-64.json",
++    "metadata/1_12_os1-991937000062-16A0_legacy.json",
++    "metadata/1_12_os1-991937000062-64_legacy.json",
++    "metadata/1_13_os1-991913000010-64.json",
++    "metadata/1_13_os1-991937000062-16A0_legacy.json",
++    "metadata/1_13_os1-991937000062-32A02_legacy.json",
++    "metadata/1_14_6cccd_os-882002000138-128_legacy.json",
++    "metadata/1_14_6cccd_os-882002000138-32U0_legacy.json",
++    "metadata/1_14_beta_os1-991937000062-16A0_legacy.json",
++    "metadata/1_14_beta_os1-991937000062-64_legacy.json",
++    "metadata/2_0_0_os1-991913000010-64.json",
++    "metadata/2_0_0_os1-992008000494-128_col_win_legacy.json",
++    "metadata/2_0_rc2_os-992011000121-32U0_legacy.json",
++    "metadata/2_1_2_os1-991913000010-64.json",
++    "metadata/2_1_2_os1-991913000010-64_legacy.json",
++    "metadata/2_2_os-992119000444-128.json",
++    "metadata/2_2_os-992119000444-128_legacy.json",
++    "metadata/2_3_1_os-992146000760-128.json",
++    "metadata/2_3_1_os-992146000760-128_legacy.json",
++    "metadata/2_4_0_os-992146000760-128.json",
++    "metadata/2_4_0_os-992146000760-128_legacy.json",
++    "metadata/2_5_0_os-992146000760-128.json",
++    "metadata/2_5_0_os-992146000760-128_legacy.json",
++    "metadata/3_0_1_os-122246000293-128.json",
++    "metadata/3_0_1_os-122246000293-128_legacy.json",
++    "metadata/ouster-studio-reduced-config-v1.json"
++]
++
++filegroup(
++    name = "test_metadata_files",
++    srcs = glob(TEST_METADATA_FILES),
++    visibility = ["//visibility:private"]
++)

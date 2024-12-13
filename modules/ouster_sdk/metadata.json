@@ -1,0 +1,11 @@
+
+{
+    "homepage": "https://ouster.com",
+    "repository": [
+        "github:ouster-lidar/ouster-sdk"
+    ],
+    "versions": [
+        "0.13.1"
+    ],
+    "yanked_versions": {}
+}
