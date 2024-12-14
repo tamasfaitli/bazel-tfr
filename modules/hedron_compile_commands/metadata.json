@@ -1,0 +1,17 @@
+{
+    "homepage": "https://github.com/hedronvision",
+    "maintainers": [
+        {
+            "email": "faitlit@gmail.com",
+            "github": "tamasfaitli",
+            "name": "Tamas Faitli"
+        }
+    ],
+    "repository": [
+        "github:hedronvision/bazel-compile-commands-extractor"
+    ],
+    "versions": [
+        "1.0.0"
+    ],
+    "yanked_versions": {}
+}
