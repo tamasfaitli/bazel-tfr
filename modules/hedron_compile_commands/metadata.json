@@ -11,7 +11,7 @@
         "github:hedronvision/bazel-compile-commands-extractor"
     ],
     "versions": [
-        "1.0.0"
+        "1.0.0.tfr.1"
     ],
     "yanked_versions": {}
 }

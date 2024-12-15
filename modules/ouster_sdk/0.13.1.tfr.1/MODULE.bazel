@@ -1,6 +1,6 @@
 
 # only building the client to reduce dependencies and anyhow not using other parts of the sdk
-module(name = "ouster_sdk", version = "0.13.1")
+module(name = "ouster_sdk", version = "0.13.1.tfr.1")
 
 bazel_dep(name = "eigen", version = "3.4.0")
 bazel_dep(name = "curl", version = "8.8.0.bcr.2")
