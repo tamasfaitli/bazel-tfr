@@ -1,0 +1,17 @@
+{
+    "homepage": "https://github.com/mvukov/rules_ros",
+    "maintainers": [
+        {
+            "email": "faitlit@gmail.com",
+            "github": "tamasfaitli",
+            "name": "Tamas Faitli"
+        }
+    ],
+    "repository": [
+        "github:mvukov/rules_ros"
+    ],
+    "versions": [
+        "1.0.0.tfr.1"
+    ],
+    "yanked_versions": {}
+}
