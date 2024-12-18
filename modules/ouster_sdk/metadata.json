@@ -1,6 +1,13 @@
 
 {
     "homepage": "https://ouster.com",
+    "maintainers": [
+        {
+            "email": "faitlit@gmail.com",
+            "github": "tamasfaitli",
+            "name": "Tamas Faitli"
+        }
+    ],
     "repository": [
         "github:ouster-lidar/ouster-sdk"
     ],
