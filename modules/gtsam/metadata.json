@@ -1,0 +1,17 @@
+{
+    "homepage": "https://gtsam.org",
+    "maintainers": [
+        {
+            "email": "faitlit@gmail.com",
+            "github": "tamasfaitli",
+            "name": "Tamas Faitli"
+        }
+    ],
+    "repository": [
+        "github:borglab/gtsam"
+    ],
+    "versions": [
+        "dev-5125844d.tfr.0"
+    ],
+    "yanked_versions": {}
+}

@@ -1,0 +1,10 @@
+
+{
+    "integrity": "sha256-h11kRYq4RK8WYwI4SiRfM/6Rb/W+HMRO+aW1GtWEGkg=",
+    "strip_prefix": "gtsam-5125844d19039690ae98135ad34fcb74dde2fa15",
+    "url": "https://github.com/borglab/gtsam/archive/5125844d19039690ae98135ad34fcb74dde2fa15.tar.gz",
+    "patch_strip": 1,
+    "patches": {
+            "gtsam.patch": "sha256-8tu1YWXv2cSkRhu7S09dKC8Qn1Ohd9nkFP7q+Ab/TPc="
+    }
+}
