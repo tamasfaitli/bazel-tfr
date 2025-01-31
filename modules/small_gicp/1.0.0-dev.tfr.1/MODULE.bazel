@@ -1,0 +1,12 @@
+
+module(
+    name = "small_gicp",
+    version = "1.0.0-dev.tfr.1",
+)
+
+bazel_dep(name = "eigen", version = "3.4.0.bcr.1")
+bazel_dep(name = "onetbb", version = "2022.0.0")
+bazel_dep(name = "pcl", version = "1.14.1")
+
+bazel_dep(name = "fmt", version = "11.1.3", dev_dependency = True)
+bazel_dep(name = "googletest", version = "1.15.2", dev_dependency = True)

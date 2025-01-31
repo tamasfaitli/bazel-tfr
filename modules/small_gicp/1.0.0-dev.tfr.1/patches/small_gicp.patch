@@ -1,0 +1,57 @@
+diff --git a/BUILD b/BUILD
+new file mode 100644
+index 0000000..1849192
+--- /dev/null
++++ b/BUILD
+@@ -0,0 +1,32 @@
++
++package(default_visibility = ["//visibility:public"])
++
++cc_library(
++    name = "small_gicp",
++    hdrs = glob([
++        "include/**/*.hpp",
++    ]),
++    defines = [
++        "BUILD_WITH_OPENMP",
++        "BUILD_WITH_TBB",
++        "BUILD_WITH_PCL",
++    ],
++    deps = [
++        "@onetbb//:tbb",
++        "@onetbb//:tbbmalloc",
++        "@pcl//:common",
++    ],
++    strip_include_prefix = "include",
++)
++
++cc_library(
++    name = "helpers",
++    srcs = glob([
++        "src/small_gicp/registration/registration.cpp",
++        "src/small_gicp/registration/registration_helper.cpp",
++    ]),
++    deps = [
++        ":small_gicp",
++    ]
++)
++
+
+diff --git a/MODULE.bazel b/MODULE.bazel
+new file mode 100644
+index 0000000..c3ce765
+--- /dev/null
++++ b/MODULE.bazel
+@@ -0,0 +1,12 @@
++
++module(
++    name = "small_gicp",
++    version = "1.0.0-dev.tfr.1",
++)
++
++bazel_dep(name = "eigen", version = "3.4.0.bcr.1")
++bazel_dep(name = "onetbb", version = "2022.0.0")
++bazel_dep(name = "pcl", version = "1.14.1")
++
++bazel_dep(name = "fmt", version = "11.1.3", dev_dependency = True)
++bazel_dep(name = "googletest", version = "1.15.2", dev_dependency = True)

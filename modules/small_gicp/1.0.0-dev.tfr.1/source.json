@@ -1,0 +1,10 @@
+
+{
+    "integrity": "sha256-J3rDu6yQXHVVaARZ4+GYhrZtUEwts0ViS+2pd8u5X/Y=",
+    "strip_prefix": "small_gicp-2c5e9e6092f06bd8b4a0c618c9714e39e4b315dc",
+    "url": "https://github.com/koide3/small_gicp/archive/2c5e9e6092f06bd8b4a0c618c9714e39e4b315dc.tar.gz",
+    "patch_strip": 1,
+    "patches": {
+        "small_gicp.patch": "sha256-JqXC1LbvEthdHhtvgPF86DijL3udw30sfk6BFcLcORA="
+    }
+}
