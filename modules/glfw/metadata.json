@@ -1,0 +1,18 @@
+
+{
+    "homepage": "https://www.glfw.org",
+    "maintainers": [
+        {
+            "email": "faitlit@gmail.com",
+            "github": "tamasfaitli",
+            "name": "Tamas Faitli"
+        }
+    ],
+    "repository": [
+        "github:glfw/glfw"
+    ],
+    "versions": [
+        "3.4.0.tfr.1"
+    ],
+    "yanked_versions": {}
+}

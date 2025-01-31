@@ -1,0 +1,6 @@
+
+module(
+    name = "glfw",
+    version = "3.4.0.tfr.1"
+)
+

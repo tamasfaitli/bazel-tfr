@@ -1,0 +1,10 @@
+
+{
+    "integrity": "sha256-wDjTQgAjTQcfrpNFvEVeSo8vVEq2AVB2XXcE4I89rAE=",
+    "strip_prefix": "glfw-3.4",
+    "url": "https://github.com/glfw/glfw/archive/refs/tags/3.4.tar.gz",
+    "patch_strip": 1,
+    "patches": {
+        "glfw3.patch": "sha256-ff048wPQZKhi5lwxoKU3sxtxSKc1l9MBLsdV4Kx74Rc="
+    }
+}
