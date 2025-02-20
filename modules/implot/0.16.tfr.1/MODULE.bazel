@@ -1,0 +1,7 @@
+
+module(
+    name = "implot",
+    version = "0.16.tfr.1"
+)
+
+bazel_dep(name = "imgui", version = "1.91.7.tfr.1")

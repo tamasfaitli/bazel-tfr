@@ -1,0 +1,47 @@
+diff --git a/BUILD b/BUILD
+new file mode 100644
+index 0000000..09c46bc
+--- /dev/null
++++ b/BUILD
+@@ -0,0 +1,27 @@
++
++package(default_visibility = ["//visibility:public"])
++
++cc_library(
++    name = "implot",
++    srcs = glob([
++        "implot_internal.h",
++        "implot.cpp",
++        "implot_items.cpp",
++    ]),
++    hdrs = glob([
++        "implot.h",
++    ]),
++    deps = [
++        "@imgui//:imgui_opengl3_glfw",
++    ]
++)
++
++cc_library(
++    name = "demo",
++    srcs = glob([
++        "implot_demo.cpp",
++    ]),
++    deps = [
++        ":implot",
++    ]
++)
+
+diff --git a/MODULE.bazel b/MODULE.bazel
+new file mode 100644
+index 0000000..e7f00b9
+--- /dev/null
++++ b/MODULE.bazel
+@@ -0,0 +1,7 @@
++
++module(
++    name = "implot",
++    version = "0.16.tfr.1"
++)
++
++bazel_dep(name = "imgui", version = "1.91.7.tfr.1")

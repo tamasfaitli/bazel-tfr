@@ -1,0 +1,18 @@
+
+{
+    "homepage": "https://github.com/epezent/implot",
+    "maintainers": [
+        {
+            "email": "faitlit@gmail.com",
+            "github": "tamasfaitli",
+            "name": "Tamas Faitli"
+        }
+    ],
+    "repository": [
+        "github:epezent/implot"
+    ],
+    "versions": [
+        "0.16.tfr.1"
+    ],
+    "yanked_versions": {}
+}

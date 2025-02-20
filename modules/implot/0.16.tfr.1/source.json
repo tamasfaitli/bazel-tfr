@@ -1,0 +1,10 @@
+
+{
+    "integrity": "sha256-lh3zJ9inVjBNGwpnMW7r2xER0T1Vnw00FRFOwOswq9E=",
+    "strip_prefix": "implot-0.16",
+    "url": "https://github.com/epezent/implot/archive/refs/tags/v0.16.tar.gz",
+    "patch_strip": 1,
+    "patches": {
+        "implot.patches": "sha256-TaRDNIUoRHrqKWuayWCcvySyzBO/rFy+iDowjgp1XYM="
+    }
+}
