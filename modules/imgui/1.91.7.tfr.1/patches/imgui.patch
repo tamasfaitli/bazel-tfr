@@ -1,0 +1,85 @@
+diff --git a/BUILD b/BUILD
+new file mode 100644
+index 0000000..52f71f9
+--- /dev/null
++++ b/BUILD
+@@ -0,0 +1,64 @@
++
++cc_library(
++    name = "imgui_raw",
++    srcs = glob([
++        "imgui.cpp",
++        "imgui_draw.cpp",
++        "imgui_tables.cpp",
++        "imgui_widgets.cpp",
++        "imconfig.h",
++        "imgui_internal.h",
++        "imstb_rectpack.h",
++        "imstb_textedit.h",
++        "imstb_truetype.h",
++    ]),
++    hdrs = glob([
++        "imgui.h",
++    ]),
++)
++
++cc_library(
++    name = "imgui_opengl3_glfw",
++    srcs = glob([
++        "backends/imgui_impl_opengl3.cpp",
++        "backends/imgui_impl_glfw.cpp",
++    ]),
++    hdrs = glob([
++        "backends/imgui_impl_glfw.h",
++        "backends/imgui_impl_opengl3.h",
++        "backends/imgui_impl_opengl3_loader.h",
++    ]),
++    deps = [
++        "@glfw//:glfw",
++        ":imgui_raw",
++    ],
++    linkopts = [
++        "-lGL",
++        "-lpthread",
++        "-ldl",
++    ],
++    visibility = ["//visibility:public"],
++    strip_include_prefix = "backends",
++)
++
++cc_library(
++    name = "demo",
++    srcs = glob([
++        "imgui_demo.cpp",
++    ]),
++    deps = [
++        ":imgui_opengl3_glfw",
++    ],
++    visibility = ["//visibility:public"],
++)
++
++cc_binary(
++    name = "example",
++    srcs = glob([
++        "examples/example_glfw_opengl3/main.cpp",
++    ]),
++    deps = [
++        ":imgui_opengl3_glfw",
++        ":demo",
++    ]
++)
+
+diff --git a/MODULE.bazel b/MODULE.bazel
+new file mode 100644
+index 0000000..3a2c861
+--- /dev/null
++++ b/MODULE.bazel
+@@ -0,0 +1,8 @@
++
++module(
++    name = "imgui",
++    version = "1.91.7.tfr.1"
++)
++
++bazel_dep(name = "glfw", version = "3.4.0.tfr.1")
++

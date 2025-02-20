@@ -1,0 +1,8 @@
+
+module(
+    name = "imgui",
+    version = "1.91.7.tfr.1"
+)
+
+bazel_dep(name = "glfw", version = "3.4.0.tfr.1")
+

@@ -1,0 +1,10 @@
+
+{
+    "integrity": "sha256-IAHatL3X0XjYJ307F8QKof8eduLMrF56uMba+XVjEsI=",
+    "strip_prefix": "imgui-1.91.7",
+    "url": "https://github.com/ocornut/imgui/archive/refs/tags/v1.91.7.tar.gz",
+    "patch_strip": 1,
+    "patches": {
+        "imgui.patch": "sha256-kNRdkQT9rlu8McVMtlBDV9573Js1gpZsyCh1j/oxAeo="
+    }
+}
