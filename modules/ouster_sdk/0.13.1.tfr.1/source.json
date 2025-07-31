@@ -5,7 +5,7 @@
     "url": "https://github.com/ouster-lidar/ouster-sdk/archive/refs/tags/release-0.13.1.tar.gz",
     "patch_strip": 0,
     "patches": {
-        "ouster_build.patch": "sha256-4pARLTG3Gt4XLx4H1lm7b2xV/p51j1lzFuy9ADw9y2U=",
+        "ouster_build.patch": "sha256-1AzUUPcwoN9ihLXxQ2GRTuWNHvIMX2lhu6ChGGB56Y8=",
         "ouster_test.patch": "sha256-03m7tor2fttn2RJkPl9zwGH2YfBSZitWKqxR+MSpGlg="
     }
 }
